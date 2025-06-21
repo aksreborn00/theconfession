@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends Confession - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Gloria Hallelujah', cursive;
+      background: url('bg/bg-home.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 2.5em;
+      border-bottom: 4px dashed white;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-bottom: 2px dashed white;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 1.3em;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+      border: 2px dashed transparent;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px #fff;
+      border: 2px dashed white;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+
+    .content {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 50px auto;
+      border-radius: 15px;
+      max-width: 900px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      animation: slideUp 1.5s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .editable {
+      border: 2px dashed white;
+      padding: 20px;
+      min-height: 120px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      font-size: 1.1em;
+    }
+
+    .editable:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      cursor: text;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ccc;
+      border-top: 2px dashed white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🧽 Friends Confession Zone 🖍️
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="confession-entry.html">Confess Now</a>
+    <a href="confession-wall.html">Confessions</a>
+    <a href="fun-wall.html">Fun Wall</a>
+  </nav>
+  <div class="content">
+    <h2>About the Developer</h2>
+    <div class="editable">
+      <!-- Add information about yourself here -->
+      <p>Hello! I'm <strong>Admin AKS</strong>, the creator of this exciting Friends Confession website made for my amazing school group. This site is a fun place where we share memories, jokes, and hidden confessions anonymously or openly! ✨[gnd fadd scch bolo!!]</p>
+      <p>You can edit this section and add your story, experiences, favorite moments, or a thank-you note to your friends. 💬</p>
+    </div>
+  </div>
+  <footer>
+    Made with ❤️ on the school chalkboard • Designed by Admin AKS
+  </footer>
+</body>
+</html>

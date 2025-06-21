@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Confession</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('bg/bg-form.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .form-box {
+      background-color: rgba(0,0,0,0.6);
+      padding: 40px;
+      max-width: 600px;
+      margin: 60px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #fff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      border: 2px dashed white;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-family: 'Gloria Hallelujah', cursive;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <header>📝 Submit Your Confession</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="confession-entry.html">Confess Now</a>
+    <a href="confession-wall.html">Confessions</a>
+    <a href="fun-wall.html">Fun Wall</a>
+  </nav>
+
+  <div class="form-box">
+  <form id="confessionForm">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="text" id="class" placeholder="Your Class" required>
+  <textarea id="confession" rows="6" placeholder="Write your confession..." required></textarea>
+  <button type="submit">Send Confession</button>
+</form>
+
+<script>
+  document.getElementById("confessionForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById("name").value;
+    const studentClass = document.getElementById("class").value;
+    const confessionText = document.getElementById("confession").value;
+
+    const confession = {
+      name: name || "Anonymous",
+      class: studentClass || "Unknown",
+      text: confessionText
+    };
+
+    let confessions = JSON.parse(localStorage.getItem("confessions")) || [];
+    confessions.push(confession);
+    localStorage.setItem("confessions", JSON.stringify(confessions));
+
+    alert("✅ Your confession was saved!");
+    this.reset();
+    window.location.href = "confession-wall.html";
+  });
+</script>
