@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confession Wall</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('bg/bg-wall.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .wall {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 0 25px #fff;
+    }
+
+    .confession {
+      border-bottom: 2px dashed white;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      animation: slideUp 0.5s ease-out;
+    }
+
+    .confession:last-child {
+      border: none;
+    }
+
+    .confession h3 {
+      margin-bottom: 5px;
+      font-size: 1.3em;
+      color: #f1f1f1;
+    }
+
+    .confession p {
+      color: #ddd;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <header>📜 Confession Wall</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="confession-entry.html">Confess Now</a>
+    <a href="confession-wall.html">Confessions</a>
+    <a href="fun-wall.html">Fun Wall</a>
+  </nav>
+
+ <div class="wall" id="confessionWall"></div>
+
+<script>
+  const wall = document.getElementById("confessionWall");
+  const confessions = JSON.parse(localStorage.getItem("confessions")) || [];
+
+  if (confessions.length === 0) {
+    wall.innerHTML = "<p style='text-align:center;'>No confessions yet. Be the first to confess!</p>";
+  } else {
+    confessions.reverse().forEach(c => {
+      wall.innerHTML += `
+        <div class="confession">
+          <h3>🧑 From: ${c.name} (${c.class})</h3>
+          <p>${c.text}</p>
+        </div>
+      `;
+    });
+  }
+</script>

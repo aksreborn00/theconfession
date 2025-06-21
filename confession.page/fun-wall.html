@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun Wall</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('bg/bg-fun.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 25px;
+    }
+
+    .friend-card {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border: 2px dashed white;
+      border-radius: 15px;
+      width: 180px;
+      text-align: center;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .friend-card:hover {
+      transform: scale(1.08);
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    .friend-card img {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>📸 Fun Wall of Friends</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="confession-entry.html">Confess Now</a>
+    <a href="confession-wall.html">Confessions</a>
+    <a href="fun-wall.html">Fun Wall</a>
+  </nav>
+
+  <div class="gallery">
+    <!-- You can replace the placeholders with real names/photos -->
+    <div class="friend-card">
+      <img src="bg/pp1.jpg" alt="School Ka Don">
+      <p><strong>Tung Tung Tung Sahur</strong></p>
+    </div>
+    <div class="friend-card">
+      <img src="bg/pp2.jpg" alt="Skool Ki Dony">
+      <p><strong>Rajni Bai</strong></p>
+    </div>
+    <!-- Add more cards -->
+  </div>
+</body>
+</html>
